@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+
+<JoramAdmin>
+  
+  <AdminModule>
+    <connect host="localhost" port="16010"
+             name="root" password="root"/>
+  </AdminModule>
+  
+  <InitialContext>
+    <property name="java.naming.factory.initial"
+              value="fr.dyade.aaa.jndi2.client.NamingContextFactory"/>
+    <property name="java.naming.factory.host" value="localhost"/>
+    <property name="java.naming.factory.port" value="16400"/>
+  </InitialContext>
+
+  <ConnectionFactory className="org.objectweb.joram.client.jms.tcp.TcpConnectionFactory">
+    <tcp host="localhost"
+         port="16010"/>
+    <jndi name="cf"/>
+  </ConnectionFactory>
+  
+  <ConnectionFactory className="org.objectweb.joram.client.jms.tcp.TopicTcpConnectionFactory">
+    <tcp host="localhost"
+         port="16010"/>
+    <jndi name="tcf"/>
+  </ConnectionFactory>
+  
+  <ConnectionFactory className="org.objectweb.joram.client.jms.tcp.QueueTcpConnectionFactory">
+    <tcp host="localhost"
+         port="16010"/>
+    <jndi name="qcf"/>
+  </ConnectionFactory>
+  
+  <User name="anonymous"
+        password="anonymous"/>
+
+<!-- Queues for pollclient   -->
+  <Queue name="queue0">
+    <freeReader/>
+    <freeWriter/>
+    <jndi name="queue0"/>
+  </Queue>
+  <Queue name="queue1">
+    <freeReader/>
+    <freeWriter/>
+    <jndi name="queue1"/>
+  </Queue>
+  
+  <Queue name="queue2">
+    <freeReader/>
+    <freeWriter/>
+    <jndi name="queue2"/>
+  </Queue>
+
+  <Queue name="queue3">
+    <freeReader/>
+    <freeWriter/>
+    <jndi name="queue3"/>
+  </Queue>
+  <Queue name="queue4">
+    <freeReader/>
+    <freeWriter/>
+    <jndi name="queue4"/>
+  </Queue>
+  <Queue name="queue5">
+    <freeReader/>
+    <freeWriter/>
+    <jndi name="queue5"/>
+  </Queue>
+  <Queue name="queue6">
+    <freeReader/>
+    <freeWriter/>
+    <jndi name="queue6"/>
+  </Queue>
+  
+<!--    -->
+  <Topic name="topic1">
+    <freeReader/>
+    <freeWriter/>
+    <jndi name="topic1"/>
+  </Topic>
+  
+  <Topic name="topic2">
+    <freeReader/>
+    <freeWriter/>
+    <jndi name="topic2"/>
+  </Topic>
+  
+</JoramAdmin>
